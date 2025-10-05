@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERA speaks</title>
+    <link rel="stylesheet" href="vera.css">
+</head>
+<body>
+    <header>
+        <h1>VERA speaks</h1>
+        <p class="tagline">Where words find their voice</p>
+    </header>
+
+    <div class="container">
+        <div class="post-form">
+            <h2>Share Your Voice</h2>
+            <form id="postForm">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select id="type" required>
+                        <option value="">Select type...</option>
+                        <option value="Novel">Novel</option>
+                        <option value="Poem">Poem</option>
+                        <option value="Story">Story</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea id="content" required></textarea>
+                </div>
+                <button type="submit">Publish</button>
+            </form>
+        </div>
+
+        <div class="posts-section" id="postsSection">
+            <div class="no-posts">No posts yet. Share your first piece of writing!</div>
+        </div>
+    </div>
+
+    <!-- Read Modal -->
+    <div class="modal" id="readModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <div class="modal-meta">
+                <span>By <strong id="modalAuthor"></strong></span>
+                <span class="modal-type" id="modalType"></span>
+                <span id="modalDate"></span>
+            </div>
+            
+            <!-- Star Rating Display -->
+            <div class="rating-display">
+                <div class="stars-display" id="starsDisplay"></div>
+                <span class="rating-text" id="ratingText">No ratings yet</span>
+            </div>
+
+            <div class="modal-body" id="modalBody"></div>
+
+            <!-- Rate This Work -->
+            <div class="rate-section">
+                <h3>Rate This Work</h3>
+                <div class="star-rating" id="starRating">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <div class="comment-form">
+                    <input type="text" id="commenterName" placeholder="Your name" required>
+                    <textarea id="commentText" placeholder="Share your thoughts..." required></textarea>
+                    <button onclick="addComment()">Post Comment</button>
+                </div>
+                <div class="comments-list" id="commentsList">
+                    <p class="no-comments">No comments yet. Be the first to share your thoughts!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="vera.js"></script>
+</body>
+</html>
